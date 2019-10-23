@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="out.js"></script>
+    <script>
+        function func1() {
+            document.getElementById('demo').innerHTML = 'hello world'
+        }
+        function tunOn() {
+            document.getElementById('i8').src = 'https://www.w3schools.com/js/pic_bulbon.gif'
+        }
+        function tunOff() {
+            document.getElementById('i8').src = 'https://www.w3schools.com/js/pic_bulboff.gif'
+        }
+    </script>
+</head>
+
+<body>
+    <p id="demo">javascript can everything</p>
+    <button onclick="func1()">Click</button>
+    <br><br>
+    <img id="i8" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width:100">
+    <button onclick="tunOn()">On</button>
+    <button onclick="tunOff()">Off</button>
+    <br><br>
+    <button onclick="sizeUp()">sizeup</button>
+    <button onclick="hide()">hide</button>
+</body>
+
+</html>

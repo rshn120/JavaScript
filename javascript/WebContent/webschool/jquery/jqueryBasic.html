@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jqueryBasic</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#show").css("border","1px solid blue");
+        // var h0 = document.getElementsByTagName("h1");
+        // document.getElementById("show").innerHTML=h0.innerHTML;
+        var h0 = $("h1").eq(0);
+        console.log(h0);
+        $("#show").html(h0.html());//요소.html("ㅁㅁㅁ") 요소에다가 ㅁㅁㅁ값을 넣어주세요
+                                   //요소.html() html()값을 가져오세요
+        });                         
+    </script>
+</head>
+<body>
+    <h1>Paragrapg1</h1>
+    <h1>Paragrapg2</h1>
+    <h1>Paragrapg3</h1>
+    <p id="show">p.show</p>
+    
+</body>
+</html>

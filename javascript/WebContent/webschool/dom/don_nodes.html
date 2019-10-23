@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function removeRow() {
+            var div1 = document.getElementById("div1");
+            var p2 = document.getElementById("p2");
+            div1.removeChild(p2);
+        }
+        function addRow() {
+            //요소를 만드는 메소드
+            var elem = document.createElement("p");
+            var text = document.createTextNode("New Paragraph");
+            elem.appendChild(text);//<p>태그안에 New paragraph 만들어짐
+            var div1 = document.getElementById("div1");
+            div1.appendChild(elem);
+        }
+        function addRow1() {
+            //요소를 만드는 메소드
+            var elem = document.createElement("p");
+            var text = document.createTextNode("Third Paragraph");
+            elem.setAttribute("id", "p3");//id에 p3을 주겠다.
+            elem.appendChild(text);//<p>태그안에 New paragraph 만들어짐
+            var div1 = document.getElementById("div1");
+            div1.appendChild(elem);
+        }
+        function insertBefore1() {
+            var tr1 = document.getElementById("tr1");
+            var td1 = document.createElement("td");
+            td1.appendChild(document.createTextNode("Zero"));
+            tr1.insertBefore(td1, document.getElementsByTagName("td")[0]);
+            //insertBefore 는 tr태그 가져옴 getElementsByTagName는 td 요소 순서에다가
+            // td를 넣겠다는것. [0]은 맨앞에 td를 생성 [n] 요런식
+        }
+    </script>
+</body>
+<button onclick="addRow()">Click</button>
+<button onclick="addRow1()">Click</button>
+<button onclick="removeRow()">Remove Click</button>
+<div id="div1">
+    <p id="p1">This is paragraph</p>
+    <p id="p2">Another Paragraph</p>
+</div>
+<button onclick="insertBefore1()">insertBefore</button>
+<table id="tab" border="1">
+    <tr id="tr1">
+        <td>on</td>
+        <td>two</td>
+    </tr>
+</table>
+
+</html>

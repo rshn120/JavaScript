@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jqueryEvent3.html</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#oldbtn").click(function () {//버튼을 누르면 새 버튼을 만든다
+                newBtn();
+            })
+            // $("#newBtn").click(function(){//구현 후 신규로 생성된 이벤트를 실행하는거라 인지가 안되서 실행안됨
+            //     alert("new btn clicked.");
+            // })
+            $(document).on("click", "#newBtn", function () {//상위 이벤트에 대한 선택자를 지정하고 (이벤트이름, 대상, 펑션)
+                alert("new btn clicked.");
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div id="show"></div>
+    <button id="oldbtn">OldButton</button>
+    <input type="text" name="firstName" value="Scott">
+    <button id="exist">ExistBtn</button>
+    <div id="upper">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+    </div>
+    <script>
+        function newBtn() {
+            var newBtn = $("<button>").html("NewBtn");
+            newBtn.attr("id", "newBtn");//id설정
+            //<button id="newBtn">NewBtn</button>
+            //<p>Hello World</p>
+            //elem.text(), html(), val(), arrt("id"),prop("")
+            //elem.text("New World")
+            // var div = $("<div>").html("<h3>Hello</h3>");
+                var div = $("<div>").html($("<h3>").text("Hello"));
+                $("body").append(div);
+                // $("body").append(newBtn);
+                $("body").prepend(newBtn);
+                //.prepend앞에다 어떤 조건을 실행한다.
+                console.log($("input[name=firstName]").val());
+                $("input[name=firstName]").val("Charlie");
+                console.log(newBtn.attr("id"));
+                //remove(요소를 제거)
+                $("#exist").remove();
+                //empty() 하위 요소를 제거
+                $("#upper").empty();
+        }
+    </script>
+
+</body>
+
+</html>

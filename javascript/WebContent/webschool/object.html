@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var car = {
+            name: "sonata",
+            model: "hybrid",
+            whight: 9000,
+            color: "white",
+            start: function () {
+                console.log(this.name + " starting.");
+            },
+            breake: function () {
+                console.log(this.name + " breaking.");
+            },
+            fullname: function () {
+                return this.name * ", " + this.model + ", " + this.color;
+            }
+        }
+        car.start();
+        car.breake();
+        console.log("this car : " + car.fullname()+", weight: "+car["weight"]);
+        for(i in car) {
+            console.log(typeof i,car[i]);
+            if(typeof car[i]=="function"){
+                console.log(car[i]());
+            }else{
+                console.log(car[i]);
+            }
+        }
+        // var car2 = new Object();
+        // car2.name = "k5";
+        // car2.color = "blue";
+        // car2.model = "hybrid";
+        // car2.fullname = function(){return this.name+", "+this.color+", "+this.model}
+        // console.log(car2.fullname);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

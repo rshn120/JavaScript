@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            // $("button").click(function(){
+            //     $("[href]").hide();
+            // })
+            // $("#btn1").click(function(){
+            //     $("[href]").hide();
+            // });
+            // $("#btn2").click(function(){
+            //     $("[href]").show();
+            // });
+            $("button:first").click(function(){
+                $("a[href^=https]").hide();
+                // ^= ? 는 ?표로 시작하는걸 뭐뭐해라
+                // $= ? 는 ?표로 끝나는걸 뭐뭐해라
+            })
+            $("button:last").click(function(){
+                $("a[href $=com]").hide();
+            })
+        });
+    </script>
+</head>
+<body>
+    <button id="btn1">Hidek</button>
+    <button id="btn2">Show</button>    
+    <p>a paragraph</p>
+    <p>another paragraph</p>
+    <p><a href="https://www.daum.net" target="_blank">Daum</a></p>
+    <p><a href="http://www.naver.com"target="parent">Naver</a></p>
+</body>
+</html>

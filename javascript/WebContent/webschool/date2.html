@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="Cal"></div>
+    <script>
+        function getCal(y, m) {
+            var y = prompt("input fahrenheit : ");
+            var m = prompt("input fahrenheit : ");
+            var d = new Date(y, m-1, 1);
+            var l = new Date(y, m, 0);
+            var tag = "<h3>"+y +"년, " + m + "월 달력</h3>";
+            tag += "<table border=1>";
+            tag += "<tr><th> <font color='red'>일</th><th><font color='red'>월</th><th><font color='red'>화</th><th><font color='red'>수</th><th><font color='red'>목</th><th><font color='red'>금</th><th> <font color='red'>토</th></tr>";
+            tag += "<tr>";
+            var skip = 0;
+            for(skip = 0; skip <d.getDay(); skip++){
+                tag += "<td></td>";
+            }
+            for (var i = 1; i <= l.getDate(); i++) {
+                tag += "<td><font color='red'>" + i + "</td>";
+                if ((skip + i )%7 == 0) {
+                    tag += "<tr></tr>";
+                }
+            }
+            tag += "</tr>"
+            tag += "</table>";
+            document.getElementById("Cal").innerHTML = tag;
+        }
+        getCal();
+    </script>
+</body>
+
+</html>

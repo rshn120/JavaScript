@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jqueryEvent1</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#p1").mousedown(function(){
+                $("#show").html("MouseDown over p1")
+                .css("background-color","red");
+            })
+            $("#p1").mouseup(function(){
+                $("#show").html("MouseUp over p1")
+                .css("background-color","yellow");
+            })
+            $("#p1").mouseover(function(){
+                $("#show").html("MouseUp over p1")
+                .css("background-color","green");
+            })
+            $("#p1").mouseout(function(){
+                $("#show").html("MouseUp over p1")
+                .css("background-color","purple");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p id="p1">This is paragraph</p><br><br>
+    <div id="show"></div>
+    <button>Double Click</button>
+    <script>
+        $("button").dblclick(function () {
+            var p1s = $("#p1").html();
+            //p1s에 p태그의 id=p1의 내용을 넣는다.
+            $("#show").html(p1s);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("#btn1").click(function(){//$ j쿼리 시작
+            //     $("h2").hide();
+            // })
+            // $("#btn2").click(function(){//# 아이디를 지정하겠다
+            //     $("p").hide();
+            // });
+            $("body *").click(function(){
+                // console.log(this);
+                $(this).hide(); //this는 클릭이벤트를 받는 모든 요소가 적용됨.
+            });
+            $("button").click(function(){
+                $("body *").show();
+            });
+            var elem=$("p").eq(0);
+            elem.click(function(){
+                console.log(this);
+            });
+            $("p").eq(0).click(function(){
+                $("p").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>a Heading</h2>    
+    <p class="int">p.int a Paragraph</p>
+    <p>p a Another</p>
+    <button id="btn1">Click</button>
+    <button id="btn2">Click</button>
+</body>
+</html>
